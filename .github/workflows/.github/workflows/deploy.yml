@@ -1,0 +1,30 @@
+yaml 
+name:CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      -name: Checkout Respository 
+      uses: actions/chcckout@v3
+
+      -name:Install Dependencies
+      run: echo "installing dependencies (if needed)"
+
+      -name: Build Project
+      run: echo "Building project
+      run echo "Building project..."
+
+    deploy:
+      runs-on:ubuntu-latest
+      needs: build
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v3
+
+        - nanme: Deployto GitHub Pages
+          rub echo "Deploying application..."
